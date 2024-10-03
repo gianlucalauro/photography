@@ -24,6 +24,18 @@ it's hosted by GitHub for __free__.
 
 And, of course, you don't want my name at the bottom to show up. You can change it in `_config.yml` file as well as a few other settings like your social links, google analytics, etc. Just do not forget to [build the website](#build-the-website) after you make the changes.
 
+## Run the website on docker
+1. `$ cd photography` - go to the project directory
+2. `$ docker build -t photography .` - build the docker image
+3. run the container:
+    ```bash
+    docker run -d \
+      -p 4000:4000 \
+      -v "/path/to/images/:/app/images/fulls/" \
+      --name photography \
+      photography
+    ```
+
 ## Run the website locally to test
 1. `$ cd photography` - go to the project directory
 2. `$ bundle install` - install gems
