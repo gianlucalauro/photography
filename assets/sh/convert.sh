@@ -4,6 +4,9 @@
 input_dir="/app/images/fulls"
 output_dir="/app/images/thumbs"
 
+# Create the output directory if it does not exist
+mkdir -p "$output_dir"
+
 # Calculate the total number of files to process
 total_files=$(find "$input_dir" -type f -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" | wc -l)
 processed_files=0
